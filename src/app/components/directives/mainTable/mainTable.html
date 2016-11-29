@@ -1,0 +1,15 @@
+<div>
+    <table class="table table-bordered">
+        <thead class="thead-inverse">
+        <tr ng-repeat="row in heading">
+            <th ng-repeat="cell in row">{{cell}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="(key, row) in model">
+            <td ng-repeat="cell in row track by $index"><input type="text" readonly="readonly" ng-model="model[key][$index]"></td>
+        </tr>
+        </tbody>
+    </table>
+    <button ng-click="startUpdate()" class="btn-default">Push</button>
+</div>
